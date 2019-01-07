@@ -1,0 +1,19 @@
+body{
+   background-image: url(../images/questions.jpg);
+   margin-bottom: 5%;
+}
+
+.jumbotron{
+    background-image: url(../images/jumbo.jpg);
+    background-position: center; 
+    padding-bottom: 10px;
+    margin-bottom: 0rem;
+}
+
+.jumbotron h1{
+    margin-top:25%; 
+    left:10px;
+    font-size:100px;
+    color:#fff;
+    text-shadow: 3px 2px grey; 
+   }
