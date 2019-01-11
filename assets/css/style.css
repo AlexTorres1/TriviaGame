@@ -1,19 +1,33 @@
 body{
-   background-image: url(../images/questions.jpg);
+   background-image: url(../images/sf4.jpg);
+   /* background-repeat: no-repeat; */
    margin-bottom: 5%;
+   background-size: 100%;
 }
 
 .jumbotron{
-    background-image: url(../images/jumbo.jpg);
-    background-position: center; 
-    padding-bottom: 10px;
-    margin-bottom: 0rem;
+    background-color: #f1f000;
+    box-shadow: inset 1px 1px 1px 1px #6b6868;
+    border: 3px solid #feffff!important;
+    border-radius: 40px;
 }
 
 .jumbotron h1{
-    margin-top:25%; 
-    left:10px;
+    /* margin-top:25%; 
+    left:10px; */
     font-size:100px;
-    color:#fff;
-    text-shadow: 3px 2px grey; 
-   }
+    font-weight: 500;
+    color:#f40000;
+    /* text-shadow: 3px 2px grey;  */
+    background-color: black;
+    border: 3px solid #feffff!important;
+    box-shadow: inset 1px 1px 1px 1px #6b6868;
+    border-radius: 40px;
+    font-family: serif
+   } 
+ 
+ .innerCont{
+     margin-left: 10px;
+     margin-right: 10px;
+ }  
+
