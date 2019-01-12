@@ -2,10 +2,33 @@
 
 var wins = 0;
 var loss = 0;
+var correctAnswers = 0;
+var incorrectAnswers = 0;
+var number = 30;
+var intervalId;
+
+function run() {
+    clearInterval(intervalId);
+    intervalId = setInterval(decrement, 1000);
+  }
+
+  function decrement() {
+    number--;
+    $("#time").html("<h2>" + number + "</h2>");
+    if (number === 0) {
+      stop();
+      alert("Time Up!");
+    }
+  }
+
+  function stop() {
+    clearInterval(intervalId);
+  }  
 
 //to get the modal to load to start 
 $(document).ready(function(){
     $("#myModal").modal();
+    run();
 });
 
 //to push the wins/loss on the selection for the questions/answers
@@ -79,18 +102,17 @@ function checkIput(){
     checkAnswer(questionIndex, answerIndex)
 }
 
-    //generate them dynamically
-
-    // create a funtion to caputre the click
-
+//create questions and see which is checked. generate them dynamically, create a funtion to caputre the click
 function checkAnswer(questionIndex, answerIndex){
     console.log(questionIndex, answerIndex);
     questions[questionIndex]
     if(answerIndex == questions[questionIndex].correctAnswer){
         wins++;
+        $("#wins").text("Fights won: "+ wins);
         console.log("correct");
     }else{
         loss++;
+        $("#loss").text("Fights lost: "+ loss);
         console.log("wrong");
     }
 }
@@ -103,7 +125,7 @@ $("").on("click", function(){
 startGame();
 
 //create timer
-//create questions and see which is checked
+
 // var element = document.getElementsByName("element");
 
 //Timer runs out go to the answers

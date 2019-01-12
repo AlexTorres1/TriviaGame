@@ -42,3 +42,18 @@ body{
      border: 3px solid #feffff!important;
  }
 
+#timeBody{
+    background-color: #fff0;
+    border: 0px;
+}
+
+#time{
+    font-size:100px;
+    font-weight: 500;
+    color:#f40000;
+    background-color: black;
+    border: 3px solid #feffff!important;
+    box-shadow: inset 1px 1px 1px 1px #6b6868;
+    border-radius: 40px;
+    font-family: serif    
+}
