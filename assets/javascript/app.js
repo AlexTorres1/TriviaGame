@@ -3,19 +3,28 @@
 var wins = 0;
 var loss = 0;
 
+//to get the modal to load to start 
+$(document).ready(function(){
+    $("#myModal").modal();
+});
+
+//to push the wins/loss on the selection for the questions/answers
 $("#wins").text("Fights won: "+ wins);
 $("#loss").text("Fights lost: "+ loss);
+
+//function to start the game
 
 function startGame()
 {
     for(var i = 0; i < questions.length; i++){
         $("#trivia").append("<h5>"+questions[i].question+"</h5>");
         for (var j = 0; j < questions[i].answers.length; j++){
-            $("#trivia").append('<div class="form-check form-check-inline"> <input class="form-check-input" type="radio" name="element" questionIndex="'+i+'" answerIndex="'+j+'" id="inlineCheckbox2" value="option2"> <label class="form-check-label" for="inlineCheckbox2">' +questions[i].answers[j]+ '</label></div>');
+            $("#trivia").append('<div class="form-check form-check-inline"> <input class="form-check-input" type="radio" name="element'+i+'" questionIndex="'+i+'" answerIndex="'+j+'" id="inlineCheckbox2" value="option2"> <label class="form-check-label" for="inlineCheckbox2">' +questions[i].answers[j]+ '</label></div>');
         }
     }
 }
 
+//questions array
 var questions = [{
     question: "Which game did Ryu Debut in?",
     answers: ["Street Fighter", "Street Fighter II", "Street Fighter Alpha", "Puzzle Fighter"],
@@ -60,39 +69,38 @@ var questions = [{
     // // }]
 
 
-//create array of objects with answers
+//function to check the questions and answers
 
 $(document).on("click", ".form-check-input", checkIput);
 
 function checkIput(){
-
-var questionIndex = $(this).attr("questionIndex");
-var answerIndex = $(this).attr("answerIndex");
-
-
-checkAnswer(questionIndex, answerIndex)
+    var questionIndex = $(this).attr("questionIndex");
+    var answerIndex = $(this).attr("answerIndex");
+    checkAnswer(questionIndex, answerIndex)
 }
 
     //generate them dynamically
 
     // create a funtion to caputre the click
 
-    function checkAnswer(questionIndex, answerIndex){
-        console.log(questionIndex, answerIndex);
-        questions[questionIndex]
-        if(answerIndex == questions[questionIndex].correctAnswer){
-            wins++;
-            console.log("correct");
-        }else{
-            loss++;
-            console.log("wrong");
-        }
+function checkAnswer(questionIndex, answerIndex){
+    console.log(questionIndex, answerIndex);
+    questions[questionIndex]
+    if(answerIndex == questions[questionIndex].correctAnswer){
+        wins++;
+        console.log("correct");
+    }else{
+        loss++;
+        console.log("wrong");
     }
-    $("").on("click", function(){
-        $(this).attr("")
-    })
+}
+$("").on("click", function(){
+    $(this).attr("")
+})
 
-    startGame();
+
+//calls start game function
+startGame();
 
 //create timer
 //create questions and see which is checked
