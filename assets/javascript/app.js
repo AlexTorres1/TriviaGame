@@ -7,6 +7,7 @@ var incorrectAnswers = 0;
 var number = 30;
 var intervalId;
 
+//Timer to stop game (not complete)
 function run() {
     clearInterval(intervalId);
     intervalId = setInterval(decrement, 1000);
@@ -124,9 +125,4 @@ $("").on("click", function(){
 //calls start game function
 startGame();
 
-//create timer
 
-// var element = document.getElementsByName("element");
-
-//Timer runs out go to the answers
-//Show correct/incorrect answers
