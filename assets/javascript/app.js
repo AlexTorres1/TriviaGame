@@ -7,6 +7,12 @@ var incorrectAnswers = 0;
 var number = 30;
 var intervalId;
 
+$(document).ready(function(){
+
+//to get the modal to load to start 
+    $("#myModal").modal();
+    $("#startButton").on("click", run);
+    
 //Timer to stop game (not complete)
 function run() {
     clearInterval(intervalId);
@@ -14,23 +20,17 @@ function run() {
   }
 
   function decrement() {
-    number--;
     $("#time").html("<h2>" + number + "</h2>");
+    number--;
     if (number === 0) {
       stop();
-      alert("Time Up!");
+      $("#myModalLooser").modal();    
     }
   }
 
   function stop() {
     clearInterval(intervalId);
   }  
-
-//to get the modal to load to start 
-$(document).ready(function(){
-    $("#myModal").modal();
-    run();
-});
 
 //to push the wins/loss on the selection for the questions/answers
 $("#wins").text("Fights won: "+ wins);
@@ -92,7 +92,6 @@ var questions = [{
     // //     correctAnswer: 3
     // // }]
 
-
 //function to check the questions and answers
 
 $(document).on("click", ".form-check-input", checkIput);
@@ -111,6 +110,7 @@ function checkAnswer(questionIndex, answerIndex){
         wins++;
         $("#wins").text("Fights won: "+ wins);
         console.log("correct");
+        // wins();
     }else{
         loss++;
         $("#loss").text("Fights lost: "+ loss);
@@ -121,8 +121,13 @@ $("").on("click", function(){
     $(this).attr("")
 })
 
+// $("#reStartButton").on("click", function(){
+//     decrement();
+//     // startGame();
+// } 
+
 
 //calls start game function
 startGame();
-
+});
 

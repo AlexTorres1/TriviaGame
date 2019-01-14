@@ -12,13 +12,13 @@
     
     <div class="container mt-4">
             <div class="jumbotron py-0 border">
-                    <div class=".innerCont">
+                    <div class="innerCont">
                       <h1 class="display-4 text-center">K.O</h1>
                     </div>
                   </div>        
     </div>    
 
-    <div class="container mt-4 mb-4">
+    <div class="container mt-1 mb-4">
         <div class="row mx-auto">
             <div class="col-xs-12 col-md-3 mx-auto">
             <div class="card" id="timeBody">
@@ -77,6 +77,40 @@
             </div>          
         </div>
     </div>
+
+    <div class="modal fade" id="myModaWinner" role="dialog">
+            <div class="modal-dialog modal-lg">
+    
+                <!-- Modal to display a Winner Screen-->
+                <div class="modal-content">
+                
+                <div class="modal-body text-primary text-center">
+                    <p>Street Fighter Trivia Game</p>
+                    <img id="imageOpen" src="./assets/images/openScene.gif">
+                    <br>
+                    <button type="button" id="startButton" class="btn btn-default btn-danger mt-1" data-dismiss="modal">Hello there!</button>
+                </div>
+                
+                </div>          
+            </div>
+        </div>
+
+        <div class="modal fade" id="myModalLooser" role="dialog">
+            <div class="modal-dialog modal-lg">
+    
+                <!-- Modal to display a loss screen-->
+                <div class="modal-content">
+                
+                <div class="modal-body text-primary text-center">
+                    <p>Street Fighter Trivia Game</p>
+                    <img id="imageOpen" src="./assets/images/bisonlaugh.gif">
+                    <br>
+                    <button type="button" id="reStartButton" class="btn btn-default btn-danger mt-1" data-dismiss="modal">You Lost</button>
+                </div>
+                
+                </div>          
+            </div>
+        </div>
 
    
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
